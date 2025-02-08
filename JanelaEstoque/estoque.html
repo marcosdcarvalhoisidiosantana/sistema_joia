@@ -3,51 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página em Construção</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: #555;
-        }
-
-        p {
-            font-size: 1.2rem;
-            color: #777;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            color: white;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Gestão de Estoque</title>
+    <link rel="stylesheet" href="estoque.css">
 </head>
 <body>
-    <h1>Página em Construção</h1>
-    <p>Estamos trabalhando para trazer novidades em breve!</p>
-    <button id="voltar-btn" class="btn">Voltar para a Página Inicial</button>
+    <header>
+        <h1>Gerencie o estoque</h1>
+        <nav>
+            <ul>
+                <li><button id="entrada-btn" class="btn">Entrada de Estoque</button></li>
+                <li><button id="saida-btn" class="btn">Saída de Estoque</button></li>
+                <li><button id="lista-btn" class="btn">Lista de Estoque</button></li>
+                <li><button id="voltar-btn" class="btn">Voltar para pagina inicial</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="row">
+            <div class="col-md-6 section" id='div-entrada'>
+                <h3>Entrada de Estoque</h3>
+                <form id="form-entrada">
+                    <div class="mb-3">
+                        <label class="form-label">Produto</label>
+                        <select class="form-select" id="produto-entrada"></select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Fornecedor</label>
+                        <input type="text" class="form-control" id="fornecedor">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Quantidade</label>
+                        <input type="number" class="form-control" id="quantidade-entrada">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Preço Unitário</label>
+                        <input type="number" step="0.01" class="form-control" id="preco-unitario">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Data</label>
+                        <input type="date" class="form-control" id="data-entrada">
+                    </div>
+                    <button type="submit" class="btn btn-success">Confirmar Entrada</button>
+                </form>
+            </div>
+            <div class="col-md-6 section" id="div-saida">
+                <h3>Saída de Estoque</h3>
+                <form id="form-saida">
+                    <div class="mb-3">
+                        <label class="form-label">Produto</label>
+                        <select class="form-select" id="produto-saida"></select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Quantidade</label>
+                        <input type="number" class="form-control" id="quantidade-saida">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Motivo</label>
+                        <select class="form-select" id="motivo-saida">
+                            <option>Venda</option>
+                            <option>Perda</option>
+                            <option>Transferência</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Data</label>
+                        <input type="date" class="form-control" id="data-saida">
+                    </div>
+                    <button type="submit" class="btn btn-danger">Confirmar Saída</button>
+                </form>
+            </div>
+            
+            <div class="col-md-6 section" id="div-lista">
+                <h3>Consulta de Estoque</h3>
+        
+                <!-- Tabela de Estoque -->
+                <table class="table-custom">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Quantidade</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Produto A</td>
+                            <td>50</td>
+                            <td>2023-10-01</td>
+                        </tr>
+                        <tr>
+                            <td>Produto B</td>
+                            <td>30</td>
+                            <td>2023-10-05</td>
+                        </tr>
+                        <tr>
+                            <td>Produto C</td>
+                            <td>20</td>
+                            <td>2023-10-10</td>
+                        </tr>
+                        <tr>
+                            <td>Produto D</td>
+                            <td>10</td>
+                            <td>2023-10-15</td>
+                        </tr>
+                        <tr>
+                            <td>Produto E</td>
+                            <td>5</td>
+                            <td>2023-10-20</td>
+                        </tr>
+                        <tr>
+                            <td>Produto F</td>
+                            <td>100</td>
+                            <td>2023-10-25</td>
+                        </tr>
+                        <tr>
+                            <td>Produto G</td>
+                            <td>60</td>
+                            <td>2023-10-30</td>
+                        </tr>
+                        <tr>
+                            <td>Produto H</td>
+                            <td>40</td>
+                            <td>2023-11-01</td>
+                        </tr>
+                        <tr>
+                            <td>Produto I</td>
+                            <td>25</td>
+                            <td>2023-11-05</td>
+                        </tr>
+                        <tr>
+                            <td>Produto J</td>
+                            <td>15</td>
+                            <td>2023-11-10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
     <script>
         window.api.requireEstoque();
     </script>
+    <footer>
+        <p>&copy; 2024 - Sistema de Estoque</p>
+    </footer>
 </body>
 </html>

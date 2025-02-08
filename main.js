@@ -1,4 +1,4 @@
-const { app, BrowserWindow , ipcMain , dialog } = require('electron')
+const { app, BrowserWindow , ipcMain } = require('electron')
 const path = require('node:path')
 
 let mainWindow;
@@ -17,7 +17,7 @@ app.whenReady().then(() => {
 
   mainWindow.loadFile('index.html')
 
-  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
 })
 
